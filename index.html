@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="ur" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>adilmaqbool — نمونہ</title>
+  <meta name="description" content="سادہ، خوبصورت اور ریسپانسیو ویب پیج — HTML/CSS/JS" />
+  <style>
+    :root{
+      --bg:#0f1724; --card:#0b1220; --muted:#9aa6b2; --accent:#06b6d4; --glass: rgba(255,255,255,0.04);
+      --radius:14px;
+      --transition:300ms cubic-bezier(.2,.9,.3,1);
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0; font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Noto Sans', 'Helvetica Neue', Arial; 
+      background:linear-gradient(180deg,#081024 0%, #071029 60%); color:#e6eef6; -webkit-font-smoothing:antialiased; 
+      padding:32px; display:flex; align-items:center; justify-content:center;
+    }
+    .wrap{width:100%;max-width:1100px}
+
+    header{display:flex;align-items:center;justify-content:space-between; gap:16px}
+    .brand{display:flex;align-items:center;gap:12px}
+    .logo{width:48px;height:48px;border-radius:12px;background:linear-gradient(135deg,var(--accent),#7c3aed);display:flex;align-items:center;justify-content:center;font-weight:700}
+    h1{margin:0;font-size:20px}
+    nav{display:flex;gap:12px}
+    a.btn{padding:8px 14px;background:var(--glass);border-radius:10px;text-decoration:none;color:var(--accent);font-weight:600;transition:all var(--transition)}
+    a.btn:hover{transform:translateY(-3px);box-shadow:0 6px 20px rgba(0,0,0,0.45)}
+
+    .hero{display:grid;grid-template-columns:1fr 420px;gap:28px;margin-top:28px;align-items:center}
+    .card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01)); padding:28px;border-radius:var(--radius);box-shadow:0 8px 30px rgba(2,6,23,0.6)}
+    .lead{color:var(--muted);margin-top:8px}
+    .cta{margin-top:20px;display:flex;gap:12px}
+
+    /* right column small preview */
+    .preview{padding:18px;border-radius:12px;background:#071026;border:1px solid rgba(255,255,255,0.03)}
+    .preview h3{margin:0 0 8px 0}
+    .features{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:18px}
+    .feature{padding:12px;border-radius:10px;background:linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.006));border:1px solid rgba(255,255,255,0.02)}
+
+    form{display:flex;flex-direction:column;gap:10px}
+    input, textarea{background:transparent;border:1px solid rgba(255,255,255,0.06);padding:10px;border-radius:10px;color:inherit}
+    input::placeholder, textarea::placeholder{color:var(--muted)}
+    button{padding:10px 12px;border-radius:10px;border:none;background:linear-gradient(90deg,var(--accent),#7c3aed);color:#041025;font-weight:700;cursor:pointer}
+
+    footer{margin-top:22px;color:var(--muted);font-size:13px;text-align:center}
+
+    /* responsive */
+    @media (max-width:900px){
+      .hero{grid-template-columns:1fr;}
+      nav{display:none}
+      body{padding:20px}
+    }
+
+    /* small utility */
+    .pill{display:inline-block;padding:6px 10px;border-radius:999px;background:rgba(255,255,255,0.02);font-weight:700}
+    .muted{color:var(--muted)}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="brand">
+        <div class="logo">وی</div>
+        <div>
+          <h1>adilmaqbool</h1>
+          <div class="muted">ریسپانسیو HTML • CSS • JS</div>
+        </div>
+      </div>
+      <nav>
+        <a class="btn" href="#features">خصوصیات</a>
+        <a class="btn" href="#contact">رابطہ کریں</a>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <div class="card">
+        <h2>adilmaqbool ویب سائٹ — تیز، صاف، اردو میں</h2>
+        <p class="lead">یہ نمونہ صفحہ آپ کے پروجیکٹ کے لیے بنیاد کے طور پر کام آ سکتا ہے — ہیرور سیکشن، فیچرز، اور رابطہ فارم کے ساتھ۔ آپ چاہیں تو میں اسے React/Next.js یا Tailwind ورژن میں بھی بنا دوں۔</p>
+        <div class="cta">
+          <a class="btn" href="#contact">ابھی آرڈر کریں</a>
+          <a class="btn" href="#" onclick="alert('نمونہ: فیچر تفصیل دکھائیں')">مزید دیکھیں</a>
+        </div>
+
+        <div class="features" id="features">
+          <div class="feature"><strong>ریسپانسیو</strong><div class="muted">تمام سکرین سائزز کیلئے</div></div>
+          <div class="feature"><strong>سرعت</strong><div class="muted">سادہ کوڈ، تیز لوڈنگ</div></div>
+          <div class="feature"><strong>آسان ترمیم</strong><div class="muted">HTML/CSS/JS واحد فائل</div></div>
+          <div class="feature"><strong>عربی/اردو</strong><div class="muted">RTL سپورٹ</div></div>
+        </div>
+
+      </div>
+
+      <aside class="preview card">
+        <h3>رابطہ کریں</h3>
+        <form id="contact" onsubmit="handleSubmit(event)">
+          <input type="text" id="name" placeholder="آپ کا نام" required />
+          <input type="email" id="email" placeholder="آپ کا ای میل" required />
+          <textarea id="message" rows="4" placeholder="پیغام"></textarea>
+          <button type="submit">پیغام بھیجیں</button>
+        </form>
+        <div id="notice" class="muted" style="margin-top:10px">فارموشن صرف فرنٹ اینڈ نمونہ — حقیقی بھیجنے کے لیے بیک اینڈ درکار ہوگا۔</div>
+      </aside>
+    </section>
+
+    <footer>
+      © " + new Date().getFullYear() + " — adilmaqbool ویب پیج۔ مجھے بتائیں اگر آپ چاہیں تو میں یہ پیج آپ کی مرضی کے مطابق تبدیل کر دوں۔
+    </footer>
+  </div>
+
+  <script>
+    // small interactive bits
+    function handleSubmit(e){
+      e.preventDefault();
+      const name = document.getElementById('name').value || 'دوست';
+      const notice = document.getElementById('notice');
+      notice.textContent = 'شکریہ، ' + name + ' — آپکا پیغام مقامی طور پر محفوظ ہوگیا (یہ صرف ڈیمو ہے)';
+      // clear fields after a short delay
+      setTimeout(()=>{document.getElementById('message').value='';},900);
+    }
+
+    // inject current year in footer (for browsers that don't run template above)
+    (function(){
+      try{
+        const f = document.querySelector('footer');
+        if(f && f.textContent.includes('new Date')){
+          f.textContent = '© ' + new Date().getFullYear() + ' — adilmaqbool ویب پیج۔ مجھے بتائیں اگر آپ چاہیں تو میں یہ پیج آپ کی مرضی کے مطابق تبدیل کر دوں.';
+        }
+      }catch(e){/*ignore*/}
+    })();
+  </script>
+</body>
+</html>
